@@ -14,6 +14,14 @@ const passwordOutput = document.querySelector("#password");
 const generateBttn = document.querySelector("#generate");
 generateBttn.addEventListener("click", generatePass);
 
+document.querySelector("#length").addEventListener("change", () => {
+  if (document.querySelector("#length").value < 8) {
+    document.querySelector("#length").value = 8;
+  } else if (document.querySelector("#length").value > 20) {
+    document.querySelector("#length").value = 20;
+  }
+});
+
 function generatePass() {
   let password = "";
   let charSet = "";
